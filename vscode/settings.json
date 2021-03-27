@@ -1,0 +1,80 @@
+{
+    "workbench.editor.enablePreview": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.fontSize": 19,
+    "terminal.integrated.fontSize": 18,
+    "editor.wordWrap": "on",
+    "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 0,
+    "files.associations": {
+    "*.html": "django-html",
+    },
+    "emmet.includeLanguages": {"django-html": "html", "erb": "html", "HTML (Eex)": "html"},
+    "beautify.language": {
+    "js": {
+    "type": ["javascript", "json"],
+    "filename": [".jshintrc", ".jsbeautifyrc"]
+    // "ext": ["js", "json"]
+    // ^^ to set extensions to be beautified using the javascript beautifier
+    },
+    "css": ["css", "scss"],
+    "html": ["htm", "html", "django-html"]
+    // ^^ providing just an array sets the VS Code file type
+    },
+    "editor.suggestSelection": "first",
+    "highlight-matching-tag.highlightFromContent": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "editor.stablePeek": true,
+    "python.testing.promptToConfigure": false,
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.unittestArgs": ["-v", "-s", ".", "-p", "*Test.py"],
+    "python.linting.flake8Args": [
+        "--max-line-length=100",
+        // "--ignore=E402,F841,F401,E302,E305",
+    ],
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.languageServer": "Jedi",
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Verdandi",
+    "workbench.colorCustomizations": {
+        "editor.background": "#fdf6e3",
+        "sideBar.background": "#fdf6e3",
+        "activityBar.background":"#eee8d5",
+        "editorGroupHeader.tabsBackground":"#eee8d5",
+        "tab.inactiveBackground":"#eee8d5",
+        "tab.activeBackground":"#fdf6e3",
+        "panel.background":"#eee8d5",
+        "statusBar.background": "#eee8d5"
+    },
+    "bracket-pair-colorizer-2.colors": [
+        "#002b36",
+        "#586e75 ",
+        "#839496"
+    ],
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "editor.tabSize": 4,
+    "editor.fontWeight": 500,
+    "extensions.ignoreRecommendations": true,
+    "elixir.useElixirSense": false,
+    "gitlens.currentLine.scrollable": false,
+    "highlight-matching-tag.styles": {
+        "opening": {
+          "name": {
+            "underline": "black"
+          }
+        }
+      },
+      "workbench.editorAssociations": [
+        {
+          "viewType": "jupyter.notebook.ipynb",
+          "filenamePattern": "*.ipynb"
+        }
+      ]
+}
