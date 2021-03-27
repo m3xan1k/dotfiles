@@ -116,6 +116,7 @@ call plug#begin()
     Plug 'lepture/vim-jinja'
     Plug 'pangloss/vim-javascript'
     Plug 'alvan/vim-closetag'
+    Plug 'mattn/emmet-vim'
 call plug#end()
 
 " NERDTree bindings
