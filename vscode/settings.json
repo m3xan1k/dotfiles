@@ -35,6 +35,7 @@
     "python.testing.unittestArgs": ["-v", "-s", ".", "-p", "*Test.py"],
     "python.linting.flake8Args": [
         "--max-line-length=100",
+        "--builtins '_'"
         // "--ignore=E402,F841,F401,E302,E305",
     ],
     "python.linting.pylintEnabled": false,
