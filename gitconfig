@@ -1,0 +1,9 @@
+[user]
+	name = m3xan1k
+	email = m3xan1k@duck.com
+[core]
+	excludesFile = ~/.gitignore
+[url "git@github.com:ourspell"]
+	insteadOf = https://github.com/ourspell
+[cola]
+	spellcheck = false

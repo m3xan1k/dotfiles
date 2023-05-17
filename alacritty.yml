@@ -1,0 +1,37 @@
+env:
+  TERM: xterm-256color
+
+window:
+  padding:
+    x: 10
+    y: 30
+  dynamic_title: true
+  opacity: 1
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+cursor:
+  style:
+    blinking: always
+    blink_interval: 700
+
+selection:
+  save_to_clipboard: false
+
+font:
+  normal:
+    family: SF Mono
+  bold:
+    family: SF Mono
+  italic:
+    family: SF Mono
+  bold_italic:
+    family: SF Mono
+  size: 16.0
+
+colors:
+  primary:
+    background: '#fdffeb'
+    foreground: '#000000'
