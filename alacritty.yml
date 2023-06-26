@@ -1,37 +1,56 @@
 env:
   TERM: xterm-256color
 
-window:
-  padding:
-    x: 10
-    y: 30
-  dynamic_title: true
-  opacity: 1
-
-scrolling:
-  history: 10000
-  multiplier: 3
-
-cursor:
-  style:
-    blinking: always
-    blink_interval: 700
-
 selection:
   save_to_clipboard: false
 
+startup_mode: Windowed
+
 font:
   normal:
-    family: SF Mono
+    family: Ricty Diminished
   bold:
-    family: SF Mono
+    family: Ricty Diminished
   italic:
-    family: SF Mono
+    family: Ricty Diminished
   bold_italic:
-    family: SF Mono
-  size: 16.0
+    family: Ricty Diminished
+  size: 19.0
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
 
 colors:
+  # Default colors
   primary:
-    background: '#fdffeb'
-    foreground: '#000000'
+    background: '0xf7f7f7'
+    foreground: '0x464646'
+
+  # Normal colors
+  normal:
+    black:   '0x101010'
+    red:     '0x7c7c7c'
+    green:   '0x8e8e8e'
+    yellow:  '0xa0a0a0'
+    blue:    '0x686868'
+    magenta: '0x747474'
+    cyan:    '0x868686'
+    white:   '0xb9b9b9'
+
+  # Bright colors
+  bright:
+    black:   '0x525252'
+    red:     '0x7c7c7c'
+    green:   '0x8e8e8e'
+    yellow:  '0xa0a0a0'
+    blue:    '0x686868'
+    magenta: '0x747474'
+    cyan:    '0x868686'
+    white:   '0xf7f7f7'
+
+key_bindings:
+  - { key: F11, action: ToggleFullscreen }
+
