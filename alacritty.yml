@@ -4,8 +4,6 @@ env:
 selection:
   save_to_clipboard: false
 
-startup_mode: Windowed
-
 font:
   normal:
     family: Ricty Diminished
@@ -50,7 +48,4 @@ colors:
     magenta: '0x747474'
     cyan:    '0x868686'
     white:   '0xf7f7f7'
-
-key_bindings:
-  - { key: F11, action: ToggleFullscreen }
 
