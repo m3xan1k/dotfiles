@@ -163,6 +163,3 @@ export NVM_DIR="$HOME/.nvm"
 
 export EDITOR=vi
 
-# Racket
-export PATH=$PATH:/usr/racket/bin
-
