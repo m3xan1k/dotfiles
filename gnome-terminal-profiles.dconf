@@ -1,0 +1,22 @@
+[/]
+list=['terminal-dot-sexy']
+
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+background-color='rgb(247,247,247)'
+foreground-color='rgb(70,70,70)'
+palette=['rgb(16,16,16)', 'rgb(124,124,124)', 'rgb(142,142,142)', 'rgb(160,160,160)', 'rgb(104,104,104)', 'rgb(116,116,116)', 'rgb(134,134,134)', 'rgb(185,185,185)', 'rgb(82,82,82)', 'rgb(124,124,124)', 'rgb(142,142,142)', 'rgb(160,160,160)', 'rgb(104,104,104)', 'rgb(116,116,116)', 'rgb(134,134,134)', 'rgb(247,247,247)']
+scrollbar-policy='never'
+use-theme-colors=false
+
+[:terminal-dot-sexy]
+audible-bell=false
+background-color='#1d1f21'
+bold-color='#c5c8c6'
+bold-color-same-as-fg=true
+foreground-color='#c5c8c6'
+palette=['#282a2e', '#a54242', '#8c9440', '#de935f', '#5f819d', '#85678f', '#5e8d87', '#707880', '#373b41', '#cc6666', '#b5bd68', '#f0c674', '#81a2be', '#b294bb', '#8abeb7', '#c5c8c6']
+scrollbar-policy='never'
+use-theme-background=false
+use-theme-colors=false
+visible-name='terminal.sexy'
