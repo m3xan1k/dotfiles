@@ -163,11 +163,6 @@ export NVM_DIR="$HOME/.nvm"
 
 export EDITOR=vi
 
-# Nodejs
-VERSION=v16.17.0
-DISTRO=linux-x64
-export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH
-
 # Racket
 export PATH=$PATH:/usr/racket/bin
 

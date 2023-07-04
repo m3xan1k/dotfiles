@@ -51,6 +51,9 @@ colors:
     cyan:    '0x868686'
     white:   '0xf7f7f7'
 
-key_bindings:
-  - { key: F11, action: ToggleFullscreen }
-
+shell:
+  program: /bin/bash
+  args:
+    - -l
+    - -c
+    - "tmux attach -t work || tmux new -s work"
