@@ -1,9 +1,10 @@
 [legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
 audible-bell=false
 background-color='rgb(253,246,227)'
+font='Ricty Diminished 19'
 foreground-color='rgb(70,70,70)'
 palette=['rgb(16,16,16)', 'rgb(124,124,124)', 'rgb(142,142,142)', 'rgb(160,160,160)', 'rgb(104,104,104)', 'rgb(116,116,116)', 'rgb(134,134,134)', 'rgb(185,185,185)', 'rgb(82,82,82)', 'rgb(124,124,124)', 'rgb(142,142,142)', 'rgb(160,160,160)', 'rgb(104,104,104)', 'rgb(116,116,116)', 'rgb(134,134,134)', 'rgb(253,246,227)']
 scrollbar-policy='never'
-use-system-font=true
+use-system-font=false
 use-theme-colors=false
 visible-name='grayscale'
