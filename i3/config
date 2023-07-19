@@ -201,10 +201,9 @@ bindsym mod4+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-    tray_output None
-    # status_command i3status
-}
+# bar {
+#     tray_output None
+# }
 # bar {
 #     tray_output None
 #     mode invisible
