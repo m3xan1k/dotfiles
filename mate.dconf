@@ -58,6 +58,7 @@ show-desktop-icons=false
 [desktop/interface]
 buttons-have-icons=false
 document-font-name='Cantarell 12'
+enable-animations=false
 font-name='Cantarell 12'
 gtk-color-scheme='topbar_bg_color:#222222\ntopbar_fg_color:#EFEFEF'
 gtk-decoration-layout='close,minimize,maximize:'
@@ -72,9 +73,9 @@ binding='Print'
 name='flameshot'
 
 [desktop/keybindings/custom1]
-action='mate-terminal --geometry=60x10+540+320 -e lnch'
+action='rofi -show drun'
 binding='<Mod4>space'
-name='lnch'
+name='rofi'
 
 [desktop/keybindings/custom2]
 action='mate-terminal'
@@ -88,8 +89,8 @@ options=['grp\tgrp:alt_space_toggle', 'ctrl\tctrl:swap_lalt_lctl']
 [desktop/peripherals/keyboard/preview]
 height=810
 width=1440
-x=240
-y=136
+x=373
+y=116
 
 [desktop/peripherals/mouse]
 accel-profile='default'
@@ -136,7 +137,7 @@ activate-window-menu='disabled'
 
 [panel/general]
 history-mate-run=['/home/m3xan1k/.local/bin/Telegram -- ', 'firefox', 'pluma ', '/usr/lib/firefox-esr/firefox-esr ']
-object-id-list=['menu-bar', 'notification-area', 'clock']
+object-id-list=['menu-bar', 'notification-area', 'clock', 'object-0']
 toplevel-id-list=['top']
 
 [panel/objects/clock]
@@ -168,6 +169,12 @@ position=10
 relative-to-edge='end'
 toplevel-id='top'
 
+[panel/objects/object-0]
+applet-iid='WnckletFactory::WorkspaceSwitcherApplet'
+object-type='applet'
+position=1570
+toplevel-id='top'
+
 [panel/toplevels/top]
 expand=true
 orientation='top'
@@ -180,13 +187,14 @@ statusbar-visible=true
 
 [power-manager]
 action-critical-battery='hibernate'
+backlight-battery-reduce=false
 brightness-ac=67.0
 button-lid-ac='suspend'
 button-lid-battery='suspend'
 button-power='suspend'
 button-suspend='suspend'
-idle-dim-ac=true
-idle-dim-battery=true
+idle-dim-ac=false
+idle-dim-battery=false
 kbd-backlight-battery-reduce=false
 sleep-computer-ac=1800
 sleep-computer-battery=600
