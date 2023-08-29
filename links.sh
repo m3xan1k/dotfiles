@@ -1,5 +1,5 @@
-ln -s ~/dotfiles/gitconfig ~/.gitconfig
-ln -s ~/dotfiles/gitignore ~/.gitignore
-ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/bashrc ~/.bashrc
-ln -s ~/dotfiles/bash_aliases ~/.bash_aliases
+for f in $(ls .); do
+    if [ -d $f ]; then
+        stow -Rv $f
+    fi
+done
