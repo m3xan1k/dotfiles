@@ -163,3 +163,7 @@ export NVM_DIR="$HOME/.nvm"
 
 export EDITOR=vi
 
+export NODE_OPTIONS=--openssl-legacy-provider
+
+export PATH=$PATH:~/.config/emacs/bin
+export PATH=$PATH:~/.local/bin/platform-tools

@@ -7,3 +7,4 @@
 	insteadOf = https://github.com/ourspell
 [cola]
 	spellcheck = false
+	startupmode = folder
