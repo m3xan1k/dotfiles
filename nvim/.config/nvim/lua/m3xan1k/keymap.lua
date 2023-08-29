@@ -44,7 +44,7 @@ vim.keymap.set('v', '>', '>gv', opts)
 vim.keymap.set('n', '<leader>e', ':NERDTreeToggle<CR>', opts)
 
 -- close buffer tab
-vim.keymap.set('n', '<leader>c', ':bdelete!<CR>', opts)
+vim.keymap.set('n', '<leader>bk', ':bdelete!<CR>', opts)
 
 -- no highlight
 vim.keymap.set('n', '<leader>nh', ':noh<CR>', opts)
@@ -55,8 +55,15 @@ vim.keymap.set('n', '<C-l>', ':BufferLineCycleNext<CR>', opts)
 vim.keymap.set('n', '<C-A-h>', ':BufferLineMovePrev<CR>', opts)
 vim.keymap.set('n', '<C-A-l>', ':BufferLineMoveNext<CR>', opts)
 
--- outline
--- vim.keymap.set('n', '<leader>fo', ':SymbolsOutline<CR>', opts)
+-- windows
+vim.keymap.set('n', '<leader>ws', ':split<CR>', opts)
+vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', opts)
+vim.keymap.set('n', '<leader>wn', ':new<CR>', opts)
+vim.keymap.set('n', '<leader>wc', ':close!<CR>', opts)
+vim.keymap.set('n', '<leader>wh', ':wincmd h<CR>', opts)
+vim.keymap.set('n', '<leader>wl', ':wincmd l<CR>', opts)
+vim.keymap.set('n', '<leader>wj', ':wincmd j<CR>', opts)
+vim.keymap.set('n', '<leader>wk', ':wincmd k<CR>', opts)
 
 -- custom macros
 vim.cmd("let @i = 'import IPython; IPython.embed()'")
