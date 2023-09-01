@@ -8,6 +8,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
     debug = false,
     sources = {
-        diagnostics.flake8
+        diagnostics.flake8,
+        null_ls.builtins.formatting.gofmt,
     }
 })

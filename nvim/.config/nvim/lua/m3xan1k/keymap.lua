@@ -65,6 +65,9 @@ vim.keymap.set('n', '<leader>wl', ':wincmd l<CR>', opts)
 vim.keymap.set('n', '<leader>wj', ':wincmd j<CR>', opts)
 vim.keymap.set('n', '<leader>wk', ':wincmd k<CR>', opts)
 
+-- toggle between implementation and tests
+vim.keymap.set('n', '<leader>gt', ':A<CR>', opts)
+
 -- custom macros
 vim.cmd("let @i = 'import IPython; IPython.embed()'")
 vim.cmd("let @p = 'from pprint import pprint; pprint()'")
