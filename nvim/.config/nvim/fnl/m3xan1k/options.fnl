@@ -43,14 +43,6 @@
 ;; undo dir
 (set vim.opt.undodir (.. (os.getenv :HOME) :/.vim/undodir))
 
-;; theme
-(vim.cmd "set background=light")
-(local colorscheme :simple)
-(local (status-ok _) (pcall vim.cmd (.. "colorscheme " colorscheme)))
-(when (not status-ok)
-  (vim.notify (.. "colorscheme " colorscheme " not found!"))
-  (lua "return "))
-
 
 (vim.cmd "set whichwrap+=<,>,h,l")
 (vim.cmd "set iskeyword+=-")
@@ -63,3 +55,4 @@
 
 ;; vimwiki
 (vim.cmd "let g:vimwiki_list = [{'path': '~/Yandex.Disk/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]")
+{}
