@@ -1,8 +1,9 @@
 [;; common dependency
- :nvim-lua/plenary.nvim
+ {1 :nvim-lua/plenary.nvim
+  :lazy true}
 
  ;; search
- :nvim-telescope/telescope.nvim
+ {1 :nvim-telescope/telescope.nvim :lazy true}
 
  ;; my colorscheme
  "https://codeberg.org/m3xan1k/simple"
@@ -11,15 +12,19 @@
  {1 :akinsho/bufferline.nvim
   :config (fn []
             ((. (require :bufferline) :setup)))
-  :dependencies :nvim-tree/nvim-web-devicons
-  :version "*"}
+  :dependencies {1 :nvim-tree/nvim-web-devicons :lazy true}
+  :version "*"
+  :event "BufReadPre"}
 
  ;; breadcrumbs
  {1 :utilyre/barbecue.nvim
   :config (fn []
             ((. (require :barbecue) :setup)))
-  :dependencies [:SmiteshP/nvim-navic :nvim-tree/nvim-web-devicons]
-  :version "*"}
+  :dependencies [{1 :SmiteshP/nvim-navic :lazy true}
+                 {1 :nvim-tree/nvim-web-devicons :lazy true}]
+  :version "*"
+  :after :VonHeikemen/lsp-zero.nvim
+  :event "BufReadPre"}
 
  ;; statusline
  {1 :nvim-lualine/lualine.nvim
@@ -28,17 +33,20 @@
  ;; git-gutter
  {1 :lewis6991/gitsigns.nvim
   :config (fn []
-            ((. (require :gitsigns) :setup)))}
+            ((. (require :gitsigns) :setup)))
+  :event "BufReadPre"}
 
  ;; search highlight helper
  {1 :kevinhwang91/nvim-hlslens
   :config (fn []
-            ((. (require :hlslens) :setup)))}
+            ((. (require :hlslens) :setup)))
+  :event "BufReadPre"}
 
  ;; "smooth" scroll
  {1 :karb94/neoscroll.nvim
   :config (fn []
-            ((. (require :neoscroll) :setup)))}
+            ((. (require :neoscroll) :setup)))
+  :event "BufReadPre"}
 
  ;; lsp helper with dependencies
  {1 :VonHeikemen/lsp-zero.nvim
@@ -52,38 +60,43 @@
                  [:L3MON4D3/LuaSnip]]}
 
  ;; completion helpers
- :hrsh7th/cmp-path
- :hrsh7th/cmp-buffer
+ {1 :hrsh7th/cmp-path
+  :event "BufReadPre"}
+ {1 :hrsh7th/cmp-buffer
+  :event "BufReadPre"}
 
  ;; for linters
- :jose-elias-alvarez/null-ls.nvim
+ {1 :jose-elias-alvarez/null-ls.nvim
+  :event "BufReadPre"}
 
  ;; common tools
  :tpope/vim-surround
  {1 :windwp/nvim-autopairs
   :config (fn []
-            ((. (require :nvim-autopairs) :setup) {}))}
+            ((. (require :nvim-autopairs) :setup) {}))
+  :event "BufReadPre"}
  {1 :terrortylor/nvim-comment
   :config (fn []
-            ((. (require :nvim_comment) :setup) {}))}
+            ((. (require :nvim_comment) :setup) {}))
+  :event "BufReadPre"}
  {1 :folke/which-key.nvim
   :config (fn []
             (set vim.o.timeout true)
             ((. (require :which-key) :setup) {}))}
 
- ;; rarely used
- :mbbill/undotree
-
  ;; save sessions
  :rmagatti/auto-session
 
  ;; highlight lsp matches
- :RRethy/vim-illuminate
+ {1 :RRethy/vim-illuminate
+  :event "BufReadPre"}
 
  {1 :nvim-treesitter/nvim-treesitter
   :config (fn []
             ((. (require :nvim-treesitter) :setup) {:ensure_installed [:http
-                                                                       :json]}))}
+                                                                       :json]}))
+  :event "BufReadPre"}
+
  ;; this is for parsing/folding json
  {1 :kevinhwang91/nvim-ufo
   :dependencies [:kevinhwang91/promise-async
@@ -102,20 +115,24 @@
  :preservim/nerdtree
 
  ;; trailing whitespaces
- :ntpeters/vim-better-whitespace
+ {1 :ntpeters/vim-better-whitespace :event "BufReadPre"}
 
  ;; my wiki
- :vimwiki/vimwiki
+ {1 :vimwiki/vimwiki
+  :ft "markdown"}
 
  ;; missing icons
- :ryanoasis/vim-devicons
+ {1 :ryanoasis/vim-devicons :lazy true}
 
  ;; clojure
  :Olical/conjure
  :tpope/vim-dispatch
  :clojure-vim/vim-jack-in
  :radenling/vim-dispatch-neovim
- :gpanders/nvim-parinfer
 
- ;; testing this thing
- :tpope/vim-projectionist]
+ {1 :gpanders/nvim-parinfer
+  :ft ["fennel"
+       "clojure"
+       "commonlisp"
+       "racket"
+       "clojurescript"]}]
