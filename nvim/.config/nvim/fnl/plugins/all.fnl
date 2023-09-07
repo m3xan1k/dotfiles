@@ -1,9 +1,8 @@
 [;; common dependency
- {1 :nvim-lua/plenary.nvim
-  :lazy true}
+ :nvim-lua/plenary.nvim
 
  ;; search
- {1 :nvim-telescope/telescope.nvim :lazy true}
+ :nvim-telescope/telescope.nvim
 
  ;; my colorscheme
  "https://codeberg.org/m3xan1k/simple"
@@ -28,7 +27,8 @@
 
  ;; statusline
  {1 :nvim-lualine/lualine.nvim
-  :dependencies {1 :nvim-tree/nvim-web-devicons :lazy true}}
+  :dependencies
+  {1 :nvim-tree/nvim-web-devicons :lazy true}}
 
  ;; git-gutter
  {1 :lewis6991/gitsigns.nvim
@@ -51,34 +51,33 @@
  ;; lsp helper with dependencies
  {1 :VonHeikemen/lsp-zero.nvim
   :branch :v2.x
-  :dependencies [[:neovim/nvim-lspconfig]
+  :dependencies [{1 :neovim/nvim-lspconfig :lazy true}
                  {1 :williamboman/mason.nvim
-                  :build (fn [] (pcall vim.cmd :MasonUpdate))}
-                 [:williamboman/mason-lspconfig.nvim]
-                 [:hrsh7th/nvim-cmp]
-                 [:hrsh7th/cmp-nvim-lsp]
-                 [:L3MON4D3/LuaSnip]]}
-
- ;; completion helpers
- {1 :hrsh7th/cmp-path
-  :event "BufReadPre"}
- {1 :hrsh7th/cmp-buffer
-  :event "BufReadPre"}
+                  :build (fn [] (pcall vim.cmd :MasonUpdate))
+                  :lazy true}
+                 {1 :williamboman/mason-lspconfig.nvim :lazy true}
+                 {1 :hrsh7th/nvim-cmp :event "InsertEnter"}
+                 {1 :hrsh7th/cmp-nvim-lsp :event "InsertEnter"}
+                 {1 :hrsh7th/cmp-path :event "InsertEnter"}
+                 {1 :hrsh7th/cmp-buffer :event "InsertEnter"}
+                 {1 :L3MON4D3/LuaSnip :event "InsertEnter"}]}
 
  ;; for linters
- {1 :jose-elias-alvarez/null-ls.nvim
-  :event "BufReadPre"}
+ :jose-elias-alvarez/null-ls.nvim
 
  ;; common tools
- :tpope/vim-surround
+ {1 :tpope/vim-surround :event "BufReadPre"}
+
  {1 :windwp/nvim-autopairs
   :config (fn []
             ((. (require :nvim-autopairs) :setup) {}))
   :event "BufReadPre"}
+
  {1 :terrortylor/nvim-comment
   :config (fn []
             ((. (require :nvim_comment) :setup) {}))
   :event "BufReadPre"}
+
  {1 :folke/which-key.nvim
   :config (fn []
             (set vim.o.timeout true)
@@ -88,8 +87,7 @@
  :rmagatti/auto-session
 
  ;; highlight lsp matches
- {1 :RRethy/vim-illuminate
-  :event "BufReadPre"}
+ {1 :RRethy/vim-illuminate :event "BufReadPre"}
 
  {1 :nvim-treesitter/nvim-treesitter
   :config (fn []
@@ -118,13 +116,12 @@
  {1 :ntpeters/vim-better-whitespace :event "BufReadPre"}
 
  ;; my wiki
- {1 :vimwiki/vimwiki
-  :ft "markdown"}
+ :vimwiki/vimwiki
 
  ;; missing icons
  {1 :ryanoasis/vim-devicons :lazy true}
 
- ;; clojure
+ ;; clojure and other lisps
  :Olical/conjure
  :tpope/vim-dispatch
  :clojure-vim/vim-jack-in
@@ -135,4 +132,16 @@
        "clojure"
        "commonlisp"
        "racket"
-       "clojurescript"]}]
+       "clojurescript"]}
+
+ ;; databases
+ {1 :kristijanhusak/vim-dadbod-ui
+  :dependencies [{1 :tpope/vim-dadbod :lazy true}
+                 {1 :kristijanhusak/vim-dadbod-completion
+                  :init
+                  (fn []
+                   ((. (. (require :cmp) :setup) :buffer) {:sources [{:name :vim-dadbod-completion}]}))
+                  :lazy true}
+                 :tpope/vim-surround
+                 :windwp/nvim-autopairs]
+  :cmd "DBUI"}]
