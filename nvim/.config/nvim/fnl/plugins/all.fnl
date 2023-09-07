@@ -7,6 +7,8 @@
  ;; my colorscheme
  "https://codeberg.org/m3xan1k/simple"
 
+ :ntk148v/komau.vim
+
  ;; tabs
  {1 :akinsho/bufferline.nvim
   :config (fn []
