@@ -1,5 +1,5 @@
 -- [nfnl] Compiled from after/plugin/lsp.fnl by https://github.com/Olical/nfnl, do not edit.
-local lsp = (require("lsp-zero")).preset({name = "minimal", set_lsp_keymaps = true, manage_nvim_cmp = true, suggest_lsp_servers = false, configure_diagnostics = false})
+local lsp = (require("lsp-zero")).preset({name = "minimal", set_lsp_keymaps = true, manage_nvim_cmp = true, configure_diagnostics = false, suggest_lsp_servers = false})
 local function _1_(client, bufnr)
   return lsp.default_keymaps({buffer = bufnr, preserve_mappings = false})
 end

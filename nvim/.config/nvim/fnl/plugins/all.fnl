@@ -14,8 +14,7 @@
   :config (fn []
             ((. (require :bufferline) :setup)))
   :dependencies {1 :nvim-tree/nvim-web-devicons :lazy true}
-  :version "*"
-  :event "BufReadPre"}
+  :version "*"}
 
  ;; breadcrumbs
  {1 :utilyre/barbecue.nvim
@@ -23,62 +22,54 @@
             ((. (require :barbecue) :setup)))
   :dependencies [{1 :SmiteshP/nvim-navic :lazy true}
                  {1 :nvim-tree/nvim-web-devicons :lazy true}]
-  :version "*"
-  :after :VonHeikemen/lsp-zero.nvim
-  :event "BufReadPre"}
+  :version "*"}
 
  ;; statusline
  {1 :nvim-lualine/lualine.nvim
   :dependencies
-  {1 :nvim-tree/nvim-web-devicons :lazy true}}
+  [:nvim-tree/nvim-web-devicons]}
 
  ;; git-gutter
  {1 :lewis6991/gitsigns.nvim
   :config (fn []
-            ((. (require :gitsigns) :setup)))
-  :event "BufReadPre"}
+            ((. (require :gitsigns) :setup)))}
 
  ;; search highlight helper
  {1 :kevinhwang91/nvim-hlslens
   :config (fn []
-            ((. (require :hlslens) :setup)))
-  :event "BufReadPre"}
+            ((. (require :hlslens) :setup)))}
 
  ;; "smooth" scroll
  {1 :karb94/neoscroll.nvim
   :config (fn []
-            ((. (require :neoscroll) :setup)))
-  :event "BufReadPre"}
+            ((. (require :neoscroll) :setup)))}
 
  ;; lsp helper with dependencies
  {1 :VonHeikemen/lsp-zero.nvim
   :branch :v2.x
-  :dependencies [{1 :neovim/nvim-lspconfig :lazy true}
+  :dependencies [:neovim/nvim-lspconfig
                  {1 :williamboman/mason.nvim
-                  :build (fn [] (pcall vim.cmd :MasonUpdate))
-                  :lazy true}
-                 {1 :williamboman/mason-lspconfig.nvim :lazy true}
-                 {1 :hrsh7th/nvim-cmp :event "InsertEnter"}
-                 {1 :hrsh7th/cmp-nvim-lsp :event "InsertEnter"}
-                 {1 :hrsh7th/cmp-path :event "InsertEnter"}
-                 {1 :hrsh7th/cmp-buffer :event "InsertEnter"}
-                 {1 :L3MON4D3/LuaSnip :event "InsertEnter"}]}
+                  :build (fn [] (pcall vim.cmd :MasonUpdate))}
+                 :williamboman/mason-lspconfig.nvim
+                 :hrsh7th/nvim-cmp
+                 :hrsh7th/cmp-nvim-lsp
+                 :hrsh7th/cmp-path
+                 :hrsh7th/cmp-buffer
+                 :L3MON4D3/LuaSnip]}
 
  ;; for linters
  :jose-elias-alvarez/null-ls.nvim
 
  ;; common tools
- {1 :tpope/vim-surround :event "BufReadPre"}
+ :tpope/vim-surround
 
  {1 :windwp/nvim-autopairs
   :config (fn []
-            ((. (require :nvim-autopairs) :setup) {}))
-  :event "BufReadPre"}
+            ((. (require :nvim-autopairs) :setup) {}))}
 
  {1 :terrortylor/nvim-comment
   :config (fn []
-            ((. (require :nvim_comment) :setup) {}))
-  :event "BufReadPre"}
+            ((. (require :nvim_comment) :setup) {}))}
 
  {1 :folke/which-key.nvim
   :config (fn []
@@ -89,13 +80,12 @@
  :rmagatti/auto-session
 
  ;; highlight lsp matches
- {1 :RRethy/vim-illuminate :event "BufReadPre"}
+ :RRethy/vim-illuminate
 
  {1 :nvim-treesitter/nvim-treesitter
   :config (fn []
             ((. (require :nvim-treesitter) :setup) {:ensure_installed [:http
-                                                                       :json]}))
-  :event "BufReadPre"}
+                                                                       :json]}))}
 
  ;; this is for parsing/folding json
  {1 :kevinhwang91/nvim-ufo
@@ -115,13 +105,13 @@
  :preservim/nerdtree
 
  ;; trailing whitespaces
- {1 :ntpeters/vim-better-whitespace :event "BufReadPre"}
+ :ntpeters/vim-better-whitespace
 
  ;; my wiki
  :vimwiki/vimwiki
 
  ;; missing icons
- {1 :ryanoasis/vim-devicons :lazy true}
+ :ryanoasis/vim-devicons
 
  ;; clojure and other lisps
  :Olical/conjure
@@ -140,7 +130,7 @@
  {1 :kristijanhusak/vim-dadbod-ui
   :dependencies [{1 :tpope/vim-dadbod :lazy true}
                  {1 :kristijanhusak/vim-dadbod-completion
-                  :init
+                  :config
                   (fn []
                    ((. (. (require :cmp) :setup) :buffer) {:sources [{:name :vim-dadbod-completion}]}))
                   :lazy true}
