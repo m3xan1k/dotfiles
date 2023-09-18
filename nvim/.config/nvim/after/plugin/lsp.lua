@@ -1,5 +1,5 @@
 -- [nfnl] Compiled from after/plugin/lsp.fnl by https://github.com/Olical/nfnl, do not edit.
-local lsp = (require("lsp-zero")).preset({name = "minimal", set_lsp_keymaps = true, manage_nvim_cmp = true, configure_diagnostics = false, suggest_lsp_servers = false})
+local lsp = (require("lsp-zero")).preset({name = "minimal", set_lsp_keymaps = true, manage_nvim_cmp = true, suggest_lsp_servers = false, configure_diagnostics = false})
 local function _1_(client, bufnr)
   return lsp.default_keymaps({buffer = bufnr, preserve_mappings = false})
 end
@@ -18,4 +18,5 @@ lspconfig.clangd.setup({})
 lspconfig.pyright.setup({settings = {python = {analysis = {autoSearchPaths = true, diagnosticMode = "openFilesOnly", typeCheckingMode = "basic", useLibraryCodeForTypes = true}}}})
 do end (require("lspconfig.configs"))["fennel_language_server"] = {default_config = {cmd = {"/home/m3xan1k/.cargo/bin/fennel-language-server"}, filetypes = {"fennel"}, root_dir = lspconfig.util.root_pattern("fnl"), settings = {fennel = {diagnostics = {globals = {"vim"}}, workspace = {library = vim.api.nvim_list_runtime_paths()}}}, single_file_support = true}}
 lspconfig.fennel_language_server.setup({})
+lspconfig.racket_langserver.setup({})
 return lsp.setup()

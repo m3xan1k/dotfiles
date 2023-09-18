@@ -40,5 +40,6 @@
                         :single_file_support true}})
 
 (lspconfig.fennel_language_server.setup {})
+(lspconfig.racket_langserver.setup {})
 
 (lsp.setup)
