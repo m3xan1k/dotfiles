@@ -136,4 +136,17 @@
                   :lazy true}
                  :tpope/vim-surround
                  :windwp/nvim-autopairs]
-  :cmd "DBUI"}]
+  :cmd "DBUI"}
+
+ {1 :nvim-orgmode/orgmode
+  :dependencies [{1 :nvim-treesitter/nvim-treesitter
+                  :lazy true}]
+  :event :VeryLazy
+  :config (fn []
+            ((. (require :orgmode) :setup_ts_grammar))
+            ((. (require :nvim-treesitter.configs) :setup) {:ensure_installed [:org]
+                                                            :highlight {:additional_vim_regex_highlighting [:org]
+                                                                        :enable true}})
+            ((. (require :orgmode) :setup) {:org_agenda_files "~/orgfiles/**/*"
+                                            :org_default_notes_file "~/orgfiles/refile.org"
+                                            :org_startup_folded "inherit"}))}]
