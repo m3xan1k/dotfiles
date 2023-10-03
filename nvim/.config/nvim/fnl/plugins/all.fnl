@@ -89,8 +89,11 @@
 
  ;; this is for parsing/folding json
  {1 :kevinhwang91/nvim-ufo
-  :dependencies [:kevinhwang91/promise-async
+  :lazy true
+  :ft ["json"]
+  :dependencies [{1 :kevinhwang91/promise-async :lazy true}
                  {1 :luukvbaal/statuscol.nvim
+                  :lazy true
                   :config (fn []
                             (local builtin (require :statuscol.builtin))
                             ((. (require :statuscol) :setup) {:relculright true
@@ -128,12 +131,15 @@
 
  ;; databases
  {1 :kristijanhusak/vim-dadbod-ui
-  :dependencies [{1 :tpope/vim-dadbod :lazy true}
+  :dependencies [{1 :tpope/vim-dadbod}
                  {1 :kristijanhusak/vim-dadbod-completion
                   :config
                   (fn []
-                   ((. (. (require :cmp) :setup) :buffer) {:sources [{:name :vim-dadbod-completion}]}))
-                  :lazy true}
+                   ((. (. (require :cmp) :setup) :buffer) {:sources [{:name :vim-dadbod-completion}]}))}
                  :tpope/vim-surround
                  :windwp/nvim-autopairs]
-  :cmd "DBUI"}]
+  :cmd "DBUI"}
+
+ ;; dap
+ {1 :rcarriga/nvim-dap-ui
+  :dependencies [{1 :mfussenegger/nvim-dap}]}]
