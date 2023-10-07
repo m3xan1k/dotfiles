@@ -163,3 +163,5 @@ cython_debug/
 pyrightconfig.json
 typings/
 .projections.json
+/.sqls/config.json
+playground.sql
