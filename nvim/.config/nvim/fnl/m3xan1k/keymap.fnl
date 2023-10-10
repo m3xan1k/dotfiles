@@ -65,6 +65,12 @@
 (vim.keymap.set :n :<leader>wk ":wincmd k<CR>" opts)
 (vim.keymap.set :n :<leader>gt ":A<CR>" opts)
 
+;; debug
+(vim.keymap.set :n :<leader>dt ":lua require('dapui').toggle()<CR>" opts)
+(vim.keymap.set :n :<leader>db ":DapToggleBreakpoint<CR>" opts)
+(vim.keymap.set :n :<leader>dc ":DapContinue<CR>" opts)
+(vim.keymap.set :n :<leader>dr ":lua require('dapui').open({reset = true})<CR>" opts)
+
 ;; custom macro
 (vim.cmd "let @i = 'import IPython; IPython.embed()'")
 (vim.cmd "let @p = 'from pprint import pprint; pprint()'")

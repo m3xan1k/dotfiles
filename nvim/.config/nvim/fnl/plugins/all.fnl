@@ -140,6 +140,20 @@
                  :windwp/nvim-autopairs]
   :cmd "DBUI"}
 
+ ;; dap
+ {1 :rcarriga/nvim-dap-ui
+  :dependencies [{1 :mfussenegger/nvim-dap}]
+  :config
+    (fn []
+      ((. (require :dapui) :setup)) {})}
+
+ {1 :leoluz/nvim-dap-go
+  :config
+  (fn []
+    ((. (require :dap-go) :setup) {}))}
+
+ {1 :theHamsta/nvim-dap-virtual-text}
+
  ;; orgnode
  {1 :nvim-orgmode/orgmode
   :dependencies [{1 :nvim-treesitter/nvim-treesitter
