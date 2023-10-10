@@ -43,14 +43,14 @@
 (vim.keymap.set :n :<leader>e ":NERDTreeToggle<CR>" opts)
 
 ;; close buffer
-(vim.keymap.set :n :<leader>bk ":bdelete!<CR>" opts)
+(vim.keymap.set :n :<leader>bd ":bdelete!<CR>" opts)
 
 ;; no highlight
 (vim.keymap.set :n :<leader>nh ":noh<CR>" opts)
 
 ;; navigate and move tabs in bufferline
-(vim.keymap.set :n :<C-h> ":BufferLineCyclePrev<CR>" opts)
-(vim.keymap.set :n :<C-l> ":BufferLineCycleNext<CR>" opts)
+(vim.keymap.set :n :<leader>bp ":BufferLineCyclePrev<CR>" opts)
+(vim.keymap.set :n :<leader>bn ":BufferLineCycleNext<CR>" opts)
 (vim.keymap.set :n :<C-A-h> ":BufferLineMovePrev<CR>" opts)
 (vim.keymap.set :n :<C-A-l> ":BufferLineMoveNext<CR>" opts)
 
@@ -67,6 +67,6 @@
 
 ;; custom macro
 (vim.cmd "let @i = 'import IPython; IPython.embed()'")
-(vim.cmd "let @p = 'from pprint import pprint; pprint()'")  
+(vim.cmd "let @p = 'from pprint import pprint; pprint()'")
 
 {}
