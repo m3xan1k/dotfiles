@@ -1,11 +1,7 @@
-(local config (require "nvim-treesitter.configs"))
-
-(config.setup {:ensure_installed [:lua
-                                  :python
-                                  :fennel
-                                  :clojure]
-               :sync_install false
-               :auto_install true
-               :highlight {:enable false}
-               :indent {:enable true
-                        :disable [:yaml]}})
+((. (require :nvim-treesitter.configs) :setup)
+ {:auto_install false
+  :ensure_installed [:json]
+  :highlight {:enable false}
+  :indent {:enable true
+           :disable [:yaml]}
+  :sync_install false})
