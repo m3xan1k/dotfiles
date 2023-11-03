@@ -4,9 +4,6 @@
  ;; search
  :nvim-telescope/telescope.nvim
 
- ;; my colorscheme
- "https://codeberg.org/m3xan1k/simple"
-
  :ntk148v/komau.vim
 
  ;; tabs
@@ -76,9 +73,6 @@
             (set vim.o.timeout true)
             ((. (require :which-key) :setup) {}))}
 
- ;; save sessions
- :rmagatti/auto-session
-
  ;; highlight lsp matches
  :RRethy/vim-illuminate
 
@@ -139,20 +133,6 @@
                  :tpope/vim-surround
                  :windwp/nvim-autopairs]
   :cmd "DBUI"}
-
- ;; dap
- {1 :rcarriga/nvim-dap-ui
-  :dependencies [{1 :mfussenegger/nvim-dap}]
-  :config
-    (fn []
-      ((. (require :dapui) :setup)) {})}
-
- {1 :leoluz/nvim-dap-go
-  :config
-  (fn []
-    ((. (require :dap-go) :setup) {}))}
-
- {1 :theHamsta/nvim-dap-virtual-text}
 
  ;; orgnode
  {1 :nvim-orgmode/orgmode

@@ -9,6 +9,12 @@
 ;; jk to normal mode
 (vim.keymap.set :i :jk :<ESC> opts)
 
+;; save buffer
+(vim.keymap.set :n :<leader>fs ":w<CR>" opts)
+
+;; to command mode
+(vim.keymap.set :n :<leader><leader> ":" opts)
+
 ;; move lines
 (vim.keymap.set :n :<A-j> ":m .+1<CR>==" opts)
 (vim.keymap.set :n :<A-k> ":m .-2<CR>==" opts)
@@ -30,10 +36,10 @@
 (vim.keymap.set :n :Q :<nop> opts)
 
 ;; resize window
-(vim.keymap.set :n :<leader>rk ":resize -2<CR>" opts)
-(vim.keymap.set :n :<leader>rj ":resize +2<CR>" opts)
-(vim.keymap.set :n :<leader>rh ":vertical resize -2<CR>" opts)
-(vim.keymap.set :n :<leader>rl ":vertical resize +2<CR>" opts)
+(vim.keymap.set :n :<leader>wrk ":resize -2<CR>" opts)
+(vim.keymap.set :n :<leader>wrj ":resize +2<CR>" opts)
+(vim.keymap.set :n :<leader>wrh ":vertical resize -2<CR>" opts)
+(vim.keymap.set :n :<leader>wrl ":vertical resize +2<CR>" opts)
 
 ;; stay in indent mode
 (vim.keymap.set :v "<" :<gv opts)
@@ -51,25 +57,21 @@
 ;; navigate and move tabs in bufferline
 (vim.keymap.set :n :<leader>bp ":BufferLineCyclePrev<CR>" opts)
 (vim.keymap.set :n :<leader>bn ":BufferLineCycleNext<CR>" opts)
-(vim.keymap.set :n :<C-A-h> ":BufferLineMovePrev<CR>" opts)
-(vim.keymap.set :n :<C-A-l> ":BufferLineMoveNext<CR>" opts)
+(vim.keymap.set :n :<leader>bmp ":BufferLineMovePrev<CR>" opts)
+(vim.keymap.set :n :<leader>bmn ":BufferLineMoveNext<CR>" opts)
 
 ;; window management
-(vim.keymap.set :n :<leader>ws ":split<CR>" opts)
-(vim.keymap.set :n :<leader>wv ":vsplit<CR>" opts)
+(vim.keymap.set :n :<leader>w% ":split<CR>" opts)
+(vim.keymap.set :n :<leader>w/ ":vsplit<CR>" opts)
 (vim.keymap.set :n :<leader>wn ":new<CR>" opts)
-(vim.keymap.set :n :<leader>wc ":close!<CR>" opts)
+(vim.keymap.set :n :<leader>wd ":close!<CR>" opts)
 (vim.keymap.set :n :<leader>wh ":wincmd h<CR>" opts)
 (vim.keymap.set :n :<leader>wl ":wincmd l<CR>" opts)
 (vim.keymap.set :n :<leader>wj ":wincmd j<CR>" opts)
 (vim.keymap.set :n :<leader>wk ":wincmd k<CR>" opts)
-(vim.keymap.set :n :<leader>gt ":A<CR>" opts)
 
-;; debug
-(vim.keymap.set :n :<leader>dt ":lua require('dapui').toggle()<CR>" opts)
-(vim.keymap.set :n :<leader>db ":DapToggleBreakpoint<CR>" opts)
-(vim.keymap.set :n :<leader>dc ":DapContinue<CR>" opts)
-(vim.keymap.set :n :<leader>dr ":lua require('dapui').open({reset = true})<CR>" opts)
+;; jump between tests and implementation
+(vim.keymap.set :n :<leader>gt ":A<CR>" opts)
 
 ;; custom macro
 (vim.cmd "let @i = 'import IPython; IPython.embed()'")

@@ -10,7 +10,7 @@
                  (vim.keymap.set mode l r opts))
 
                ;; navigation by hunks
-               (map :n "]c"
+               (map :n "<leader>ghn"
                     (fn []
                       (when vim.wo.diff
                         (lua "return \"]c\""))
@@ -19,7 +19,7 @@
                       :<Ignore>)
                     {:expr true})
 
-               (map :n "[c"
+               (map :n "<leader>ghp"
                     (fn []
                       (when vim.wo.diff
                         (lua "return \"[c\""))
@@ -29,18 +29,18 @@
                     {:expr true})
 
                ;; actions
-               (map :n :<leader>hr gs.reset_hunk)
-               (map :v :<leader>hr
+               (map :n :<leader>ghr gs.reset_hunk)
+               (map :v :<leader>ghr
                     (fn []
                       (gs.reset_hunk [(vim.fn.line ".")
                                       (vim.fn.line :v)])))
-               (map :n :<leader>hp
+               (map :n :<leader>ghs
                     gs.preview_hunk)
-               (map :n :<leader>hb
+               (map :n :<leader>ghB
                     (fn []
                       (gs.blame_line {:full true})))
-               (map :n :<leader>tb
+               (map :n :<leader>gtB
                     gs.toggle_current_line_blame)
-               (map :n :<leader>hd gs.diffthis)
-               (map :n :<leader>hD
+               (map :n :<leader>ghd gs.diffthis)
+               (map :n :<leader>ghD
                     (fn [] (gs.diffthis "~"))))})
